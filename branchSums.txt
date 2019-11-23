@@ -1,0 +1,106 @@
+
+class BinaryTree {
+  
+  constructor(value){
+    this.value = value
+    this.left = null
+    this.right = null
+  }
+  
+}
+
+
+  function branchSums(root){
+    let result = []
+    branchSumHelper(root, [0], result)
+    return result
+  }
+  
+  function branchSumHelper(node, currBranch, result){
+    if(node === null){
+      let sum = currBranch.reduce((a, b) => a + b)
+      result.push(sum)
+      return result
+    }
+    branchSumHelper(node.left, currBranch.concat(node.value), result)
+    branchSumHelper(node.rightm currBranch.concat(node.value), result)
+    
+    return result
+  }
+
+DFS
+- Result // hold all branch sum
+- CurrBranch // hold all node within a given branch
+Basecase if node === null
+  let sum = currBranch.reduce((a,b) => a + b)
+  result.push(sum)
+  return result
+  
+  
+  
+  
+  function branchSums(root){
+    let sums = []
+    branchSumHelper(root,0,sums)
+    return sums
+}
+
+function branchSumHelper(node,currSum, sums){
+  if(!node) return 
+  let newSum = node.value + currSum
+  if(!node.left && !node.right){
+    sums.push(newSum)
+    return sums
+  }
+  
+  branchSumHelper(node.left,newSum, sums)
+  branchSumHelper(node.right,newSum,sums)
+ 
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
